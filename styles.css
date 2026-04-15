@@ -1,0 +1,301 @@
+/* ===== VARIABLES DE COLOR ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+}
+
+:root {
+    --fondo: #0b0d1e;
+    --fondo-claro: #15193a;
+    --texto: #f0f0f0;
+    --texto-secundario: #c0c0c0;
+    
+    /* Colores estilo Atardecer */
+    --color-1: #ff7e5f; /* Naranja */
+    --color-2: #feb47b; /* Durazno */
+    --color-3: #6a4c93; /* Morado */
+    --color-4: #ffca3a; /* Amarillo */
+}
+
+body {
+    background-color: var(--fondo);
+    color: var(--texto);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* ===== HEADER ===== */
+.header {
+    background: rgba(21, 25, 58, 0.7);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255, 126, 95, 0.2);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    padding: 1rem 0;
+}
+
+.header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo h1 {
+    font-size: 1.8rem;
+    font-weight: 800;
+}
+
+.logo span {
+    color: var(--color-1);
+    text-shadow: 0 0 10px rgba(255, 126, 95, 0.5);
+}
+
+.nav {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.nav a {
+    text-decoration: none;
+    color: var(--texto);
+    font-weight: 500;
+    transition: color 0.3s;
+    position: relative;
+}
+
+.nav a:hover {
+    color: var(--color-2);
+}
+
+.nav a::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(90deg, var(--color-1), var(--color-4));
+    transition: width 0.3s ease;
+}
+
+.nav a:hover::after {
+    width: 100%;
+}
+
+/* ===== HERO ===== */
+.hero {
+    padding: 4rem 0;
+    background: radial-gradient(circle at top right, rgba(255, 126, 95, 0.15), transparent 40%),
+                radial-gradient(circle at bottom left, rgba(106, 76, 147, 0.15), transparent 40%);
+}
+
+.hero-contenido {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 3rem;
+}
+
+.hero-texto h2 {
+    font-size: 3rem;
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
+}
+
+.hero-texto h2 span {
+    background: linear-gradient(90deg, var(--color-1), var(--color-4));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 0 20px rgba(255, 126, 95, 0.3);
+}
+
+.hero-texto p {
+    font-size: 1.1rem;
+    color: var(--texto-secundario);
+    margin-bottom: 2rem;
+}
+
+.btn {
+    display: inline-block;
+    background: transparent;
+    color: var(--color-2);
+    border: 2px solid var(--color-2);
+    padding: 0.8rem 2rem;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 15px rgba(254, 180, 123, 0.2);
+}
+
+.btn:hover {
+    background: linear-gradient(90deg, var(--color-1), var(--color-4));
+    color: var(--fondo);
+    box-shadow: 0 0 25px rgba(255, 126, 95, 0.6);
+    border-color: transparent;
+}
+
+.hero-imagen img {
+    width: 100%;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.4), 0 0 40px rgba(255, 126, 95, 0.2);
+    border: 1px solid rgba(255, 126, 95, 0.2);
+}
+
+/* ===== GALERIA ===== */
+.galeria {
+    padding: 4rem 0;
+    background-color: var(--fondo-claro);
+}
+
+.titulo-seccion {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+}
+
+.titulo-seccion span {
+    background: linear-gradient(90deg, var(--color-1), var(--color-3));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.imagenes-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
+
+.tarjeta-imagen {
+    border-radius: 15px;
+    overflow: hidden;
+    position: relative;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    height: 250px;
+}
+
+.tarjeta-imagen img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.tarjeta-imagen:hover img {
+    transform: scale(1.1);
+}
+
+/* ===== LUGARES ===== */
+.lugares {
+    padding: 4rem 0;
+}
+
+.lista-lugares {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.lugar-card {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 126, 95, 0.2);
+    padding: 2rem;
+    border-radius: 15px;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.lugar-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 25px rgba(255, 126, 95, 0.15);
+    border-color: var(--color-1);
+}
+
+.lugar-card i {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    color: var(--color-4);
+    text-shadow: 0 0 15px rgba(255, 202, 58, 0.4);
+}
+
+.lugar-card h3 {
+    font-size: 1.4rem;
+    margin-bottom: 0.5rem;
+    color: var(--color-2);
+}
+
+.lugar-card p {
+    color: var(--texto-secundario);
+}
+
+/* ===== FRASES ===== */
+.frases {
+    padding: 4rem 0;
+    background-color: var(--fondo-claro);
+}
+
+.caja-frases {
+    max-width: 700px;
+    margin: 0 auto;
+    background: rgba(0,0,0,0.2);
+    padding: 2rem;
+    border-radius: 15px;
+    border-left: 5px solid var(--color-1);
+}
+
+.caja-frases p {
+    font-size: 1.2rem;
+    font-style: italic;
+    margin-bottom: 1.5rem;
+    color: var(--texto);
+    text-align: center;
+}
+
+/* ===== FOOTER ===== */
+.footer {
+    background: #080a1a;
+    text-align: center;
+    padding: 2rem 0;
+    border-top: 1px solid rgba(255, 126, 95, 0.2);
+}
+
+.footer p {
+    margin-bottom: 1rem;
+    color: var(--texto-secundario);
+}
+
+.redes {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.redes a {
+    color: var(--color-2);
+    font-size: 1.3rem;
+    transition: color 0.3s;
+}
+
+.redes a:hover {
+    color: var(--color-4);
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+    .hero-contenido {
+        grid-template-columns: 1fr;
+    }
+    .hero-texto h2 {
+        font-size: 2rem;
+    }
+    .nav {
+      
